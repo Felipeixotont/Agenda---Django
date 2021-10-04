@@ -1,0 +1,58 @@
+{% extends 'model-page.html' %}
+
+{% block content %}
+
+    <div style="margin-left: 25%">
+        <section class="section is-medium">
+            <div class="tile is-ancestor">
+              <div class="tile is-vertical is-8">
+                <div class="tile">
+                  <div class="tile is-parent is-vertical">
+                    <article class="tile is-child notification is-warning">
+                      <h1 class="title">Novo Evento</h1>
+
+                        <!-- Titulo -->
+                        <form action="submit" method="POST">{% csrf_token %}
+                            <div class="field">
+                              <label class="label">Título</label>
+                              <input type="number" name="id_evento" value="{{ evento.id }}" hidden>
+                              <div class="control">
+                                <input class="input" type="text" name="titulo" placeholder="título do evento" value="{{ evento.titulo }}">
+                              </div>
+                              <p class="help">Digite o nome do evento</p>
+                            </div>
+                            <!-- Data do Evento -->
+                            <div class="field">
+                              <label class="label">Data do Evento</label>
+                              <div class="control">
+                                <input class="input" type="datetime-local" name="data" value="{{ evento.get_data_input_evento }}">
+                              </div>
+                              <p class="help">informe a data do evento</p>
+                            </div>
+
+                            <!-- Descrição -->
+                            <div class="field">
+                              <label class="label">Descrição</label>
+                              <div class="control">
+                                <textarea class="textarea is-info" name="descricao" placeholder="Digite a descrição do evento">{{ evento.descricao }}</textarea>
+                              </div>
+                              <p class="help">Digite a descrição do evento</p>
+                            </div>
+
+                            <!-- Botões -->
+                            <div class="buttons is-centered">
+                                <input class="button is-info is-small" type="submit" value="Salvar">
+                                <a class="button is-link is-light is-small" href="/">Voltar para a Agenda</a>
+                            </div>
+                        </form>
+
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+{% endblock %}

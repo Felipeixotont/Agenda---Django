@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <title>Login</title>
+</head>
+<body>
+
+
+    <div align="center" class="title has-text-link">Agenda</div>
+
+    <div style="margin-top: 100px; margin-bottom: 100px">
+        <div class="columns is-mobile">
+          <div class="column is-half is-offset-one-quarter">
+              <form class="box" action="submit" method="POST">{% csrf_token %}  <!-- sempre que um form não for get tem que ter esse csrf-token, se não gera um erro -->
+              <div class="field">
+                <label class="label">Username</label>
+                <div class="control">
+                  <input class="input" type="text" name="username" placeholder="username">
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">Password</label>
+                <div class="control">
+                  <input class="input" type="password" name="password" placeholder="********">
+                </div>
+              </div>
+
+              <button class="button is-primary" type="submit">Entrar</button>
+              </form>
+          </div>
+        </div>
+    </div>
+
+    {% for message in messages %}
+        <div align="center">
+            <div class="notification is-danger">
+                <strong>Erro: </strong>{{ message }}
+            </div>
+        </div>
+        {% include "model-footer.html" %}
+    {% endfor %}
+
+</body>
+</html>

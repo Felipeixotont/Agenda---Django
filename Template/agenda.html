@@ -1,0 +1,33 @@
+{%  extends "model-page.html" %}
+
+{%  block content %}
+
+  <div style="margin-left: 25%">
+        <section class="section is-medium">
+            <div class="tile is-ancestor">
+              <div class="tile is-vertical is-8">
+                <div class="tile">
+                  <div class="tile is-parent is-vertical">
+                    <article class="tile is-child notification is-warning">
+                      <h1 class="title">Agendamentos</h1>
+                        <ul>
+                            {% for evento in eventos %}
+                                <li>
+                                        {{ evento.titulo }} - {{ evento.get_data_evento }}
+                                        ( <a href="evento/?id={{ evento.id }}">Editar</a> /
+                                        <a href="evento/delete/{{ evento.id }}/">Excluir</a> )
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </article>
+                    <div class="buttons is-centered">
+                        <a class="button is-info is-small" href="evento/">Adicionar Evento</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+  </div>
+
+{% endblock %}
