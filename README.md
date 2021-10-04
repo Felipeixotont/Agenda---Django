@@ -2,10 +2,11 @@
 
 <p>O aplicativo "Agenda" foi criado utilizando Django e Bulma e possui as seguintes features:</p>
 <ul>
-  <li> Adicionar um novo evento na agenda </li>
-  <li> Editar um evento existente na agenda </li>
-  <li> Excluir um evento existente na agenda </li>
+  <li> Adicionar um novo evento na agenda; </li>
+  <li> Editar um evento existente na agenda; </li>
+  <li> Excluir um evento existente na agenda. </li>
 </ul>
+<br>
 A inserção ou remoção de usuários é feita através da pagina de administração do próprio Django.
 
 <hr>
