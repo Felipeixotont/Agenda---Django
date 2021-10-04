@@ -1,5 +1,4 @@
 <h1 align="center"> Agenda </h1>
-<hr>
 
 <p>O aplicativo "Agenda" foi criado utilizando Django e Bulma e possui as seguintes features:</p>
 <ul>
