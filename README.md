@@ -9,7 +9,7 @@
 </ul>
 A inserção ou remoção de usuários é feita através da pagina de administração do próprio Django.
 
-
+<hr>
 <h3 align="center"> Adicionando um novo evento na agenda </h3>
 Obs.: Só é permitido adicionar eventos futuros, caso for adicionado eventos anteriores a data atual o evento não será exibido na pagina principal.
 
